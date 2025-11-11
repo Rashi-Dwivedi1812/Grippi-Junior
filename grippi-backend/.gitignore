@@ -1,0 +1,12 @@
+# Virtual Environment
+venv/
+
+# Local Database
+campaigns.db
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Local secrets
+.env
