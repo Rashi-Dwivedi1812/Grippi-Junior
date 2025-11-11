@@ -1,4 +1,3 @@
-// app/page.js
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -13,7 +12,9 @@ export default function Home() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await fetch('http://localhost:8000/campaigns');
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL + '/campaigns';
+        const res = await fetch(apiUrl);
+
         if (!res.ok) {
           throw new Error('Failed to fetch data from the API');
         }
