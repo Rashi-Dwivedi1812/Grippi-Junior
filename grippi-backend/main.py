@@ -50,7 +50,7 @@ app = FastAPI()
 # CORS Middleware: Allows your Next.js app to talk to this API
 origins = [
     "http://localhost:3000",  # Local Next.js dev server
-    # We will add the Vercel URL here after deployment
+    "https://grippi-junior.vercel.app" # <-- ADD YOUR VERCEL URL HERE
 ]
 
 app.add_middleware(
@@ -89,7 +89,7 @@ def setup_database():
     It runs *only if* the database file (for-sqlite) or table doesn't exist.
     """
     Base.metadata.create_all(bind=engine) # Creates the 'campaigns' table
-
+    
     # Check if table is empty before seeding
     db = SessionLocal()
     try:
